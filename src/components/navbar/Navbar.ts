@@ -1,10 +1,15 @@
+import Version from '../../models/Version';
 import template from './Navbar.html';
 
 class Navbar {
   brand: string;
+  version: Version;
 
-  constructor() {
+  constructor(params: { version: Version }) {
     this.brand = 'CRM';
+
+    this.version = params.version;
+    console.log('nav ver', params.version);
   }
 }
 
