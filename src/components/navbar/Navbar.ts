@@ -1,6 +1,5 @@
 import * as ko from 'knockout';
 import AxiosInstance from '../../config/AxiosInstance';
-// import Version from '../../models/Version';
 import template from './Navbar.html';
 
 class Navbar {
@@ -18,5 +17,4 @@ class Navbar {
   }
 }
 
-// The default export returns the component details object to register with KO
 export default { viewModel: Navbar, template: template };
