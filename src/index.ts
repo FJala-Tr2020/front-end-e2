@@ -2,7 +2,6 @@ import * as ko from 'knockout';
 require('knockout.validation');
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Version from './models/Version';
 import Navbar from './components/navbar/Navbar';
 
 import filmsBinding from './bindings/filmsBinding';
@@ -12,10 +11,8 @@ ko.components.register('navbar', Navbar);
 ko.bindingHandlers.films = filmsBinding;
 
 class AppViewModel {
-  version: Version;
 
   constructor() {
-    this.version = new Version();
     // These values are hard-coded but could come from a server API request with JSON response
   }
 }

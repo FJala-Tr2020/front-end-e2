@@ -1,15 +1,20 @@
-import Version from '../../models/Version';
+import * as ko from 'knockout';
+import AxiosInstance from '../../config/AxiosInstance';
+// import Version from '../../models/Version';
 import template from './Navbar.html';
 
 class Navbar {
   brand: string;
-  version: Version;
+  version: ko.Observable<string> = ko.observable('');
 
-  constructor(params: { version: Version }) {
+  constructor() {
     this.brand = 'CRM';
+  }
 
-    this.version = params.version;
-    console.log('nav ver', params.version);
+  getVersionFromAPI(): void {
+    AxiosInstance.get('/version').then(({ data }) => {
+      return this.version(data.version);
+    });
   }
 }
 
