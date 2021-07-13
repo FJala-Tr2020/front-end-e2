@@ -14,8 +14,8 @@
     "editor.formatOnSave": true,
     "sonarlint.connectedMode.connections.sonarcloud": [
       {
-        "organizationKey": "fjala-tr2020",
-        "token": "bc4be85da0bcf53e88d25611d77afc692dc4e41a"
+        "organizationKey": "<organizationKey>",
+        "token": "<token>"
       }
     ]
   },
