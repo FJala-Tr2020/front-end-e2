@@ -11,7 +11,6 @@ ko.components.register('navbar', Navbar);
 ko.bindingHandlers.films = filmsBinding;
 
 class AppViewModel {
-
   constructor() {
     // These values are hard-coded but could come from a server API request with JSON response
   }
