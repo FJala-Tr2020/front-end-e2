@@ -6,13 +6,35 @@
     <title>CRM - Team 1</title>
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container-fluid px-0">
       <div id="app">
-        <navbar class="px-0"></navbar>
-        <div class="col-12 offset-md-3 col-md-6 mt-5">
-          <leads></leads>
+        <navbar></navbar>
+        <div class="container mt-5">
+          <div id="welcome">
+            <p>Welcome!</p>
+          </div>
+          <div id="leads" class="visually-hidden">
+            <leads></leads>
+          </div>
         </div>
       </div>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const welcomeSection = document.querySelector('#welcome');
+        const leadsSection = document.querySelector('#leads');
+
+        document.querySelector('#showLeads').addEventListener('click', () => {
+          welcomeSection.classList.add('visually-hidden');
+          leadsSection.classList.remove('visually-hidden');
+        });
+
+        document.querySelector('#showWelcome').addEventListener('click', () => {
+          leadsSection.classList.add('visually-hidden');
+          welcomeSection.classList.remove('visually-hidden');
+        });
+      });
+    </script>
   </body>
 </html>
