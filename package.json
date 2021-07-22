@@ -9,7 +9,8 @@
     "build": "webpack --mode production",
     "lint": "eslint . --ext .ts,.tsx",
     "docs": "typedoc --entryPoints src/*.ts",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",

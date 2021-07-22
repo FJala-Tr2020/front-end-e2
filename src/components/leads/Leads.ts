@@ -1,6 +1,6 @@
 import * as ko from 'knockout';
 import template from './Leads.html';
-import { RequestLead } from '../helpers/request';
+import { RequestLead } from '../../helpers/request';
 
 class Leads {
   request: RequestLead;
