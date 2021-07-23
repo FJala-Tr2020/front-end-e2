@@ -5,10 +5,12 @@ import { RequestLead } from '../../helpers/request';
 class Leads {
   request: RequestLead;
   leadsList = ko.observableArray();
+  description;
 
   constructor() {
     this.request = new RequestLead();
     this.loadLeads();
+    this.description = process.env.DESCRIPTION_TABLE_LEADS;
   }
 
   loadLeads(): void {

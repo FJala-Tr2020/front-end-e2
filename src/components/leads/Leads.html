@@ -1,7 +1,5 @@
-<table class="table table-bordered" aria-describedby="table of leads">
-  <caption>
-    Table of Leads
-  </caption>
+<table class="table table-bordered" data-bind="attr: {'aria-describedby': description}">
+  <caption data-bind="text: description"></caption>
   <thead class="thead-light">
     <tr>
       <th scope="col">Name</th>
