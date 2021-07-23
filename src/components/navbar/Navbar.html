@@ -3,32 +3,29 @@
     <a class="navbar-brand" href="#" data-bind="text: brand"></a>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px">
-        <!-- <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li> -->
       </ul>
       <ul class="navbar-nav navbar-right">
         <li class="nav-item">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#versionModal" data-bind="click: getVersionFromAPI" >
             Version
           </button>
 
           <!-- Modal -->
           <div
             class="modal fade"
-            id="exampleModal"
+            id="versionModal"
             tabindex="-1"
-            aria-labelledby="exampleModalLabel"
+            aria-labelledby="versionModalLabel"
             aria-hidden="true"
           >
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Version</h5>
+                  <h5 class="modal-title" id="versionModalLabel">Version</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <p data-bind="text: version.value"></p>
+                  <p data-bind="text: version"></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>

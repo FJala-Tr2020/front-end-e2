@@ -9,11 +9,13 @@
     "build": "webpack --mode production",
     "lint": "eslint . --ext .ts,.tsx",
     "docs": "typedoc --entryPoints src/*.ts",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
+    "dotenv-webpack": "^7.0.3",
     "knockout": "^3.5.1",
     "knockout.validation": "^2.0.4"
   },
