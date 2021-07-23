@@ -1,12 +1,4 @@
 import template from './Navbar.html';
+import { Navbar } from './Navbar.class';
 
-class Navbar {
-  brand: string;
-
-  constructor() {
-    this.brand = 'CRM';
-  }
-}
-
-// The default export returns the component details object to register with KO
 export default { viewModel: Navbar, template: template };
