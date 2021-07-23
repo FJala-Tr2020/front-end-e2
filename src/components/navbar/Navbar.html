@@ -1,5 +1,40 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#" data-bind="text: brand"></a>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px">
+      </ul>
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#versionModal" data-bind="click: getVersionFromAPI" >
+            Version
+          </button>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="versionModal"
+            tabindex="-1"
+            aria-labelledby="versionModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="versionModalLabel">Version</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p data-bind="text: version"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
