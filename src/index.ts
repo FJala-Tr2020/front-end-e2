@@ -5,8 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar/Navbar';
 
 import filmsBinding from './bindings/filmsBinding';
+import Leads from './components/leads/Leads';
 
 ko.components.register('navbar', Navbar);
+ko.components.register('leads', Leads);
 
 ko.bindingHandlers.films = filmsBinding;
 
