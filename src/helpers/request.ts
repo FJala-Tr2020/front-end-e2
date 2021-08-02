@@ -1,4 +1,5 @@
 import { Lead } from 'models/lead';
+import { Customer } from 'models/customer';
 import { HttpClient } from 'models/http';
 
 export class RequestLead implements HttpClient<Lead> {
@@ -6,7 +7,16 @@ export class RequestLead implements HttpClient<Lead> {
 
   async getLeads(): Promise<Lead[]> {
     try {
-      const response = await fetch(this.baseUrl + 'leads');
+      const response = await fetch(this.baseUrl + '/leads');
+      return await response.json();
+    } catch (error) {
+      return [];
+    }
+  }
+
+  async getCustomers(): Promise<Customer[]> {
+    try {
+      const response = await fetch(this.baseUrl + '/customers');
       return await response.json();
     } catch (error) {
       return [];

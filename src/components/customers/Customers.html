@@ -1,0 +1,23 @@
+<table class="table table-bordered" data-bind="attr: {'aria-describedby': description}">
+  <caption data-bind="text: description"></caption>
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">City</th>
+      <th scope="col">Country</th>
+      <th scope="col">Company</th>
+    </tr>
+  </thead>
+  <tbody data-bind="foreach: customersList">
+    <tr>
+      <td data-bind="text: name"></td>
+      <td data-bind="text: phone"></td>
+      <td data-bind="text: email"></td>
+      <td data-bind="text: city"></td>
+      <td data-bind="text: country"></td>
+      <td data-bind="text: company"></td>
+    </tr>
+  </tbody>
+</table>
