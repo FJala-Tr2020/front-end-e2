@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CRM - Team 1</title>
+    <title>CRM - Team 2</title>
   </head>
   <body>
     <div class="container-fluid px-0">
@@ -16,6 +16,9 @@
           <div id="leads" class="visually-hidden">
             <leads></leads>
           </div>
+          <div id="customers" class="visually-hidden">
+            <customers></customers>
+          </div>
         </div>
       </div>
     </div>
@@ -24,15 +27,28 @@
       document.addEventListener('DOMContentLoaded', () => {
         const welcomeSection = document.querySelector('#welcome');
         const leadsSection = document.querySelector('#leads');
+        const customersSection = document.querySelector('#customers');
+        let currentSection = welcomeSection;
+
+        document.querySelector('#showCustomers').addEventListener('click', () => {
+          currentSection.classList.add('visually-hidden');
+          customersSection.classList.remove('visually-hidden');
+
+          currentSection = customersSection;
+        });
 
         document.querySelector('#showLeads').addEventListener('click', () => {
-          welcomeSection.classList.add('visually-hidden');
+          currentSection.classList.add('visually-hidden');
           leadsSection.classList.remove('visually-hidden');
+
+          currentSection = leadsSection;
         });
 
         document.querySelector('#showWelcome').addEventListener('click', () => {
-          leadsSection.classList.add('visually-hidden');
+          currentSection.classList.add('visually-hidden');
           welcomeSection.classList.remove('visually-hidden');
+
+          currentSection = welcomeSection;
         });
       });
     </script>

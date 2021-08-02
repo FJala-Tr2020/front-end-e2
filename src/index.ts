@@ -6,9 +6,11 @@ import Navbar from './components/navbar/Navbar';
 
 import filmsBinding from './bindings/filmsBinding';
 import Leads from './components/leads/Leads';
+import Customers from './components/customers/Customer';
 
 ko.components.register('navbar', Navbar);
 ko.components.register('leads', Leads);
+ko.components.register('customers', Customers);
 
 ko.bindingHandlers.films = filmsBinding;
 
