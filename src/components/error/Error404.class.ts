@@ -2,6 +2,6 @@ export class Error404 {
   text: string;
 
   constructor() {
-    this.text = 'Error 404';
+    this.text = 'Page not found';
   }
 }
