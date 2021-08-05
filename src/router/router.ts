@@ -1,17 +1,17 @@
 import * as ko from 'knockout';
-import { RouteType } from './routeType';
+import { RoutesType, RouteType } from './routesType';
 
 type Component = {
   name: string;
 };
 
 export class Router {
-  routes: RouteType[];
+  routes: RoutesType;
   component: ko.Observable<Component>;
 
-  constructor(routes: RouteType[]) {
+  constructor(routes: RoutesType) {
     this.routes = routes;
-    this.component = ko.observable(this.routes[0].component);
+    this.component = ko.observable(this.routes.validRoutes[0].component);
   }
 
   load(path: string): void {
@@ -27,18 +27,18 @@ export class Router {
   }
 
   matchUrlToRoute(pathSegments: string[]): RouteType {
-    const matchedRoute = this.routes.find((route) => {
+    const matchedRoute = this.routes.validRoutes.find((route) => {
       const routePathSegs = route.path.split('/').slice(1);
 
       if (routePathSegs.length !== pathSegments.length) {
         return false;
       }
       return routePathSegs.every((routePathSeg, i) => {
-        return routePathSeg == pathSegments[i];
+        return routePathSeg === pathSegments[i];
       });
     });
     if (!matchedRoute) {
-      return this.routes[1];
+      return this.routes.error;
     }
     return matchedRoute;
   }

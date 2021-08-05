@@ -4,3 +4,8 @@ export interface RouteType {
     name: string;
   };
 }
+
+export type RoutesType = {
+  error: RouteType;
+  validRoutes: RouteType[];
+};
