@@ -1,4 +1,6 @@
+import { Router } from '../../router/router';
 import { Navbar } from './Navbar.class';
+import { routes } from '../../router/routes';
 
 describe('Testing Navbar Class', () => {
   it('should be defined', () => {
@@ -7,7 +9,12 @@ describe('Testing Navbar Class', () => {
   });
 
   it('should be brand call CRM', () => {
-    const navbar = new Navbar();
+    const router = new Router(routes);
+    const params = {
+      router: router
+    };
+    const navbar = new Navbar(params);
+
     expect(navbar.brand).toBe('CRM');
   });
 });

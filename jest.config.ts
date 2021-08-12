@@ -9,7 +9,7 @@ export default async (): Promise<Config.InitialOptions> => {
     transform: {
       '^.+\\.(ts|tsx)$': 'ts-jest'
     },
-    testEnvironment: 'node',
+    testEnvironment: 'jsdom',
     collectCoverage: true,
     testResultsProcessor: 'jest-sonar-reporter',
     coveragePathIgnorePatterns: ['/node_modules/']
